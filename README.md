@@ -143,7 +143,7 @@ contract Random2 is ERC721, VRFConsumerBaseV2Plus {
 
     //请求随机数
     function requestRandomWords() public {
-        uint256 requestId = s_vrfCoordinator.requestRandomWords(
+        uint256 requestId = COORDINATOR.requestRandomWords(
             VRFV2PlusClient.RandomWordsRequest({
                 keyHash: keyHash,
                 subId: s_subscriptionsId,
@@ -559,7 +559,7 @@ contract RandomNumberConsumer2 is VRFConsumerBaseV2Plus {
 
 7. **利用`Chainlink VRF`链下随机数铸造`NFT`**
 
-同理，在`remix`界面中，点击左侧橙色函数`mintRandomVRF`，在弹出的小狐狸钱包中点击确认，利用`Chainlink VRF`链下随机数铸造交易就开始了
+同理，在`remix`界面中，点击左侧橙色函数`mintRandomVRF/requestRandomWords`，在弹出的小狐狸钱包中点击确认，利用`Chainlink VRF`链下随机数铸造交易就开始了
 
 **注意:** 采用`VRF`铸造`NFT`时，发起交易和铸造成功不在同一个区块
 
