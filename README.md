@@ -33,8 +33,6 @@
 
 ##### 3）、`Chainlink VRF`使用步骤
 
-![image-20250322164758792](C:\Users\Yotoha\Desktop\MyDocuments\solidity\@Yotoha0303\p2\day01\image-20250322164758792.png)
-
 我们将用一个简单的合约介绍使用`Chainlink VRF`的步骤。`RandomNumberConsumer`合约可以向`VRF`请求随机数，并存储在状态变量`randomWords`中。
 
 **1. 申请Subscription并转入`Link`代币’**
@@ -288,7 +286,7 @@ contract Random2 is ERC721, VRFConsumerBaseV2Plus {
     }
 ```
 
-**3. `Chainlink`节点链下生成随机数和[数字签名](https://github.com/AmazingAng/WTF-Solidity/blob/main/37_Signature/readme.md)，并发送给`VRF`合约**
+**3. `Chainlink`节点链下生成随机数和[数字签名]，并发送给`VRF`合约**
 
 **4. `VRF`合约验证签名有效性**
 
@@ -545,17 +543,11 @@ contract RandomNumberConsumer2 is VRFConsumerBaseV2Plus {
 
 **1. 在`Chainlink VRF`上申请`Subscription`**
 
-![image-20250323012325412](C:\Users\Yotoha\Desktop\MyDocuments\solidity\@Yotoha0303\p2\day01\image-20250323012325412.png)
-
 **2. 利用`Chainlink`水龙头获取测试网的`LINK`和`ETH`**
 
 **3. 在`Subscription`中转入`LINK`代币**
 
-![image-20250323012425352](C:\Users\Yotoha\Desktop\MyDocuments\solidity\@Yotoha0303\p2\day01\image-20250323012425352.png)
-
 **4. 在`Sepolia`测试网部署`Random`合约**
-
-![image-20250323012508679](C:\Users\Yotoha\Desktop\MyDocuments\solidity\@Yotoha0303\p2\day01\image-20250323012508679.png)
 
 **5. 利用链上随机数铸造`NFT`**
 
@@ -564,8 +556,6 @@ contract RandomNumberConsumer2 is VRFConsumerBaseV2Plus {
 **6. 在`Consumers`中添加合约地址**
 
 将合约加入到`Subscription`的`Consumers`中
-
-![image-20250323012555403](C:\Users\Yotoha\Desktop\MyDocuments\solidity\@Yotoha0303\p2\day01\image-20250323012555403.png)
 
 7. **利用`Chainlink VRF`链下随机数铸造`NFT`**
 
